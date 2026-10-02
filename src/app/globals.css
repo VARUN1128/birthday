@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-calligraphy {
+    font-family: var(--font-calligraphy), 'Great Vibes', cursive;
+  }
+  .font-handwriting {
+    font-family: var(--font-handwriting), 'Caveat', cursive;
+  }
+  .font-handwriting-alt {
+    font-family: var(--font-handwriting-alt), 'Dancing Script', cursive;
+  }
+  .font-serif-custom {
+    font-family: var(--font-serif), 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Base custom resets */
+html, body {
+  background-color: #FAF7F2;
+  color: #3D2817;
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+  touch-action: manipulation;
+}
+
+/* Custom Desk & Paper Textures */
+.wooden-desk-bg {
+  background-color: #1a100c;
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(61, 40, 23, 0.4) 0%, rgba(15, 9, 6, 0.95) 100%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 2px, transparent 2px, transparent 8px);
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+}
+
+/* Antique Parchment Paper Styling (Reference 3) */
+.parchment-paper {
+  background-color: #f4e8d3;
+  background-image: 
+    radial-gradient(ellipse at center, rgba(253, 248, 238, 0.95) 0%, rgba(240, 226, 202, 0.9) 60%, rgba(215, 192, 160, 0.95) 100%),
+    repeating-radial-gradient(circle at 20% 40%, rgba(139, 94, 60, 0.03) 0px, rgba(139, 94, 60, 0.03) 2px, transparent 2px, transparent 10px),
+    repeating-radial-gradient(circle at 80% 70%, rgba(120, 70, 30, 0.02) 0px, rgba(120, 70, 30, 0.02) 3px, transparent 3px, transparent 12px);
+  color: #3d2514;
+  position: relative;
+  box-shadow: 
+    0 15px 35px -5px rgba(20, 10, 5, 0.45),
+    0 5px 15px rgba(0,0,0,0.3),
+    inset 0 0 40px rgba(139, 94, 60, 0.18),
+    inset 0 0 120px rgba(100, 60, 30, 0.12);
+}
+
+/* Torn Irregular Paper Edges */
+.torn-edges {
+  clip-path: polygon(
+    0% 0.8%, 3% 0%, 7% 0.6%, 12% 0.1%, 18% 0.7%, 24% 0.2%, 31% 0.8%, 37% 0.1%, 44% 0.6%, 52% 0%, 59% 0.7%, 66% 0.2%, 73% 0.8%, 81% 0.1%, 88% 0.7%, 95% 0.2%, 100% 0.9%,
+    99.3% 8%, 100% 15%, 99.2% 23%, 99.8% 31%, 99.1% 39%, 99.7% 48%, 99.2% 56%, 99.9% 64%, 99.3% 72%, 99.8% 81%, 99.2% 89%, 99.7% 96%, 100% 100%,
+    96% 99.3%, 89% 99.9%, 82% 99.2%, 74% 99.8%, 67% 99.1%, 59% 99.7%, 51% 99.2%, 43% 99.8%, 35% 99.3%, 28% 99.9%, 20% 99.2%, 13% 99.7%, 5% 99.2%, 0% 100%,
+    0.7% 93%, 0.1% 85%, 0.8% 77%, 0.2% 69%, 0.7% 60%, 0.1% 52%, 0.8% 44%, 0.3% 36%, 0.8% 27%, 0.2% 19%, 0.7% 11%
+  );
+}
+
+/* Handmade Card Base */
+.handmade-card {
+  background: #faf6f0;
+  background-image: radial-gradient(rgba(120, 80, 50, 0.03) 1px, transparent 1px);
+  background-size: 16px 16px;
+  border: 1px solid rgba(180, 150, 120, 0.25);
+  box-shadow: 
+    0 10px 25px -5px rgba(60, 40, 20, 0.12),
+    0 4px 10px -2px rgba(60, 40, 20, 0.06);
+}
+
+/* Subtle fold lines on paper */
+.paper-crease {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: 
+    linear-gradient(135deg, transparent 49.5%, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.04) 50.5%, transparent 51%),
+    linear-gradient(45deg, transparent 49.5%, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.03) 50.5%, transparent 51%);
+}
+
+/* Washi tape styling */
+.washi-tape {
+  height: 26px;
+  width: 90px;
+  background: rgba(230, 200, 190, 0.75);
+  backdrop-filter: blur(1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  clip-path: polygon(3% 0%, 97% 0%, 100% 50%, 97% 100%, 3% 100%, 0% 50%);
+  opacity: 0.85;
+}
+
+/* Ink text effects */
+.brown-ink-text {
+  color: #3B2516;
+  text-shadow: 0.2px 0.2px 0.4px rgba(59, 37, 22, 0.3);
+}
+
+/* Handwriting baseline jitter simulation */
+.ink-jitter > span {
+  display: inline-block;
+}
+
+/* Custom scrollbar for letter */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(240, 226, 202, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 94, 60, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 94, 60, 0.5);
+}
