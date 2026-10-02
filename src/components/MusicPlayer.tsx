@@ -11,8 +11,8 @@ export function MusicPlayer() {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    // Create hidden audio element for love-song.mp3
-    const audio = new Audio("/music/love-song.mp3");
+    // Create hidden audio element for the user's uploaded mp3
+    const audio = new Audio("/Dheema(KoshalWorld.Com).mp3");
     audio.loop = true;
     audio.preload = "auto";
 
@@ -59,13 +59,13 @@ export function MusicPlayer() {
       notes.forEach((freq, idx) => {
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
-        osc.type = "sine";
+        osc.type = "triangle";
         osc.frequency.setValueAtTime(freq, ctx.currentTime);
 
         const now = ctx.currentTime;
         const delay = idx * 0.15; // gentle arpeggio
         gain.gain.setValueAtTime(0.0001, now + delay);
-        gain.gain.exponentialRampToValueAtTime(0.04, now + delay + 0.8);
+        gain.gain.exponentialRampToValueAtTime(0.4, now + delay + 0.8);
         gain.gain.exponentialRampToValueAtTime(0.0001, now + delay + 4.5);
 
         osc.connect(gain);
